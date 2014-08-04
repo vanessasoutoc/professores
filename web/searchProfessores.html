@@ -1,0 +1,14 @@
+<div class="panel-body">
+
+	<div class="panel panel-default" ng-repeat="escola in listaEscolas">
+		<div class="panel-heading">{{escola.nome}}</div>
+		<div class="panel-body">
+
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="professores in escola.professores">{{professores.nome}}</li>
+
+			</ul>
+			
+		</div>
+	</div>
+</div>

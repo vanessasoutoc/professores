@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Professores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+    </head>
+    <body ng-controller="professorCtrl">
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- inicio menus ------------------ -->
+                <ul class="nav nav-pills">
+                    <li><a href="index.html">Professores</a></li>
+                    <li><a href="#/">Cadastrar Professores</a></li>
+                    <li><a href="#/">Buscar Professores</a></li>
+                </ul>
+                <!-- fim menus --------------------- -->
+            </div>
+        </nav>
+        <BR>
+        <p></p>
+        <div class="container">
+            <br></br>
+            <div class="panel-body">
+                <!--Inicio nome do Professor-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Cadastrar Professores:</div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" ng-model="professor.nome" placeholder="Nome">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <!--Fim da linha do nome do Professor-->
+                                <!--Linha especialidade Professor-->
+                                <div class="row" >
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control" ng-model="professor.bairro" placeholder="Especialidade">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary">
+                            Salvar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--Busca de Escolas-->
+            <div class="row" >
+                <div class="col-lg-2">
+                </div>
+            </div>
+            <!--Fim busca de Escolas-->
+
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading ">Escolas<br><br>
+
+                        <input class="form-control" placeholder="Buscar Escolas"
+                               ng-model="filtrarProfessor"
+                               > 
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group" >
+                            <a class="list-group-item element"
+                               ng-repeat="escola in listaProfessores| filter:filtrarProfessor"
+                               ng-click="selectProfessores(professor)"
+                               >
+                                {{escola.nome}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary">
+                            Adicionar todas
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Escolas Selecionadas</div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a ng-repeat="escola in escola.professores" class="list-group-item">
+                                {{escola.nome}}
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary" ng-click="salvar()">
+                            Salvar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- inicio container rodape -->
+        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <div class="container">
+                Rodapé
+            </div>
+        </nav>
+        <!-- final container rodape -->
+        <div>   
+
+        </div>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>
