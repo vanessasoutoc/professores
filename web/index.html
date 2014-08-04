@@ -6,47 +6,53 @@
 
 
     </head>
-    <body ng-controller="professorCtrl">
+    <body>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <!-- inicio menus ------------------ -->
                 <ul class="nav nav-pills">
-                    <li><a href="addProfessores.html">Cadastrar Professores</a></li>
-                    <li><a href="searchProfessores.html">Buscar Professores</a></li>
+                    <li><a href="#/addProfessores">Cadastrar Professores</a></li>
+                    <li><a href="#/searchProfessores">Buscar Professores</a></li>
                 </ul>
                 <!-- fim menus --------------------- -->
             </div>
         </nav>
 
-        <div class="panel-body">
-            <div class="jumbotron">
-                <h1>Verifique todos os professores - {{teste}}</h1>
-                <p>
-                    <a class="btn btn-primary btn-lg" 
-                       href="#" role="button">Entrar</a>
-                </p>
-            </div>
 
-        </div>
         <!-- inicio conteudo rotas -->
         <div ng-view>
 
         </div>
-        
+
         <!-- fim conteudo rotas -->
-        <!-- inicio container rodape -->
+        <!-- inicio container rodape
         <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <div class="container">
                 Rodapé
             </div>
-        </nav>
+        </nav>-->
         <!-- final container rodape -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
-        <script src="js/angular-resource.js"></script>
-        <script src="js/angular-route.min.js"></script>
-        <script src="js/angular.js"></script>
+        <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
+
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/angular-route.js"></script>
+
+        <script src="src/app.js"></script>
+        <script src="src/controller/professorCtrl.js"></script>
+        <script src="src/controller/searchProfessorCtrl.js"></script>
+        <script>
+
+            function professorSalvo()
+            {
+                alert("Salvo com sucesso!");
+            }
+        </script>
+
+
     </body>
 </html>

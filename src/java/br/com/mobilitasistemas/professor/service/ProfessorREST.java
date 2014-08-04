@@ -46,7 +46,7 @@ public class ProfessorREST {
     }
 
     @GET
-    @Produces
+    @Produces( MediaType.APPLICATION_JSON )
     public String busca() {
         List<Professor> lista = dao.get();
         for ( Professor professor : lista ) {
